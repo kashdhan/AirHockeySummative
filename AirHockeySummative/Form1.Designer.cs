@@ -45,7 +45,7 @@ namespace AirHockeySummative
             this.winLabel.BackColor = System.Drawing.Color.Transparent;
             this.winLabel.Font = new System.Drawing.Font("Perpetua Titling MT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.winLabel.Location = new System.Drawing.Point(39, 115);
+            this.winLabel.Location = new System.Drawing.Point(49, 115);
             this.winLabel.Name = "winLabel";
             this.winLabel.Size = new System.Drawing.Size(516, 166);
             this.winLabel.TabIndex = 0;

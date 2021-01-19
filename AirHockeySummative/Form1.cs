@@ -13,6 +13,7 @@ using System.Media;
 //January 7th 2020 
 //ICS3U- Mr. T
 //Simple air hockey game.
+
 namespace AirHockeySummative
 {
     public partial class Form1 : Form
@@ -29,14 +30,14 @@ namespace AirHockeySummative
 
         int strikerHeight = 25;//striker dimensions + speed
         int strikerWidth = 25;
-        int strikerSpeed = 5;
+        int strikerSpeed = 6;
 
         int puckX = 195;//puck location, dimensions & speed
         int puckY = 120;
         int puckWidth = 20;
         int puckHeight = 20;
-        int puckXSpeed = 5;
-        int puckYSpeed = -5;
+        int puckXSpeed = 6;
+        int puckYSpeed = -6;
 
         //P2 keys
         bool wDown = false;
@@ -125,7 +126,7 @@ namespace AirHockeySummative
                     break;
             }
         }
-        
+
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //move puck
@@ -188,17 +189,19 @@ namespace AirHockeySummative
 
 
             //striker intersecting with ball
-            if (striker1Rec.IntersectsWith(puckRec))
+            if (striker1Rec.IntersectsWith(puckRec) || puckRec.IntersectsWith(striker1Rec))
             {
                 puckXSpeed *= -1;
                 puckX = striker1X + strikerWidth + 1;
+              
                 player = new SoundPlayer(Properties.Resources.intersect);
                 player.Play();
             }
-            else if (striker2Rec.IntersectsWith(puckRec))
+            else if (striker2Rec.IntersectsWith(puckRec) || puckRec.IntersectsWith(striker2Rec))
             {
                 puckXSpeed *= -1;
                 puckX = striker2X - strikerWidth - 1;
+     
                 player = new SoundPlayer(Properties.Resources.intersect);
                 player.Play();
             }
